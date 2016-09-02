@@ -29,6 +29,7 @@ class ActiveModelForm
   end
 
   def valid_date?(date)
+    return false unless date.is_a?(String)
     Date.parse(date)
     true
   rescue ArgumentError

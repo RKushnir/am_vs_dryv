@@ -19,6 +19,7 @@ RSpec.shared_examples 'a validated form' do
   it 'validates start_date is a valid date' do
     expect_failure start_date: 'wrong'
     expect_failure start_date: '2016-50-10'
+    expect_failure start_date: ['2016-01-02']
   end
 
   it 'validates end_date is present' do
@@ -29,6 +30,7 @@ RSpec.shared_examples 'a validated form' do
   it 'validates end_date is a valid date' do
     expect_failure end_date: 'wrong'
     expect_failure end_date: '2016-50-10'
+    expect_failure end_date: ['2016-01-02']
   end
 
   it 'validates start_date is before the end_date' do
